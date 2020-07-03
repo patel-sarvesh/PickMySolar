@@ -1,0 +1,69 @@
+@import '../../../assets/style/variable.scss';
+
+.user-profile {
+    margin: 30px auto;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media-up-to(xs) {
+        width: 100%;
+    }
+
+    .profile-image-section {
+        position: relative;
+
+        .cover-image {
+            width: calc(100% + 32px);
+            margin: -16px -16px 16px -16px;
+        }
+    }
+
+    .cover-upload {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+
+        .mat-icon {
+            margin-right: 10px;
+        }
+    }
+
+    .profile-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 90px;
+        background-color: $white;
+        border-radius: 50%;
+
+        img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+
+    .details-section {
+        margin: 0 10px;
+
+        .info-section {
+            padding: 20px 0 5px 0;
+            border-bottom: 1px solid $border;
+
+            label {
+                font-weight: bold;
+                margin-right: 10px;
+                word-spacing: normal;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,48 @@
+
+<section class="app-sign-in">
+    <mat-card>
+        <mat-card-title>Sign-Up</mat-card-title>
+    <mat-card-content>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit($event)">
+      <p>
+        <mat-form-field>
+          <input type="text" matInput required placeholder="Name" formControlName="name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" matInput required placeholder="Username" formControlName="username">
+        </mat-form-field>
+      </p>
+    
+      <p>
+        <mat-form-field>
+          <input type="password" matInput required placeholder="Password" formControlName="password">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="email" matInput required placeholder="Email Id" formControlName="emailId">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Choose Role</mat-label>
+          <mat-select formControlName="role" required>
+            <div *ngFor="let role of roles">
+              <mat-option [value]="role">{{role}}</mat-option>
+            </div>
+          </mat-select>
+        </mat-form-field>
+      </p>
+    
+      <div class="button">
+        <button type="submit" mat-button>Sign-Up</button>
+      </div>
+    
+    </form>
+    </mat-card-content>
+    </mat-card>
+</section>

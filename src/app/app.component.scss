@@ -1,0 +1,12 @@
+.loader {
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    .mat-progress-spinner {
+        margin: auto;
+    }
+}

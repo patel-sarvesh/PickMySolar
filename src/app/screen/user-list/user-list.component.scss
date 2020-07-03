@@ -1,0 +1,54 @@
+@import '../../../assets/style/variable.scss';
+
+.home-component {
+    h1 {
+        text-align: center;
+        padding: 10px 0;
+        margin: 0 0 10px;
+        background-color: $white;
+    }
+    .product-row {
+        display: inline-flex;
+        width: 100%;
+        .table-section {
+            background-color: $white;
+            width: 75%;
+            margin-right: 10px;
+            table {
+                width: 100%;
+                td {
+                    cursor: pointer;
+                    width: 20%;
+                }
+            }
+        }
+        
+        .filter-section {
+            background-color: $white;
+            margin: 0 10px;
+            width: 25%;
+            .title {
+                padding: 16px;
+                font-size: 18px;
+            }
+            .mat-accordion .mat-expansion-panel:last-of-type {
+                border-radius: 0;
+                box-shadow: none;
+                border-bottom: 1px solid $border;
+            }
+            .mat-expansion-panel-header {
+                font-weight: 500;
+            }
+            
+            ::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+                font-weight: 400;
+            }
+        }
+    }
+    .error-msg {
+        text-align: center;
+        border-bottom: 1px solid $border;
+        padding: 10px;
+        color: $warn;
+    }
+}

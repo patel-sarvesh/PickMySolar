@@ -4,7 +4,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+There are two local server you need to run one for frontend and another for json server
+
+## To Run FrontEnd
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## To Run Json Server
+Run `npm run server` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
+
+## Editing
+On Profile page you can upload profile as well as cover image which will get store to json too.
 
 ## Code scaffolding
 

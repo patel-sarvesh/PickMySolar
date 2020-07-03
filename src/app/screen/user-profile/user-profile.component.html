@@ -1,0 +1,59 @@
+<section class="user-profile" *ngIf="user">
+    <mat-card>
+        <div class="profile-image-section">
+            <!-- <img mat-card-image alt="cover-image" src="../../../assets/image/blue-solid-color-background.jpg"/> -->
+            <ng-container
+                [ngTemplateOutlet]="image" 
+                [ngTemplateOutletContext]="
+                { obj :
+                    {
+                        class: 'cover-image',
+                        image: (user.coverImage) ? user.coverImage : '../../../assets/image/blue-solid-color-background.jpg',
+                        alt: 'cover-image'
+                    }
+                }">
+            </ng-container>
+            <div class="profile-image">
+                <input type="file" accept="image/*" (change)="onFileInput($event, 'profile')" id="profileImgUpload" style="display:none"/> 
+                
+                <ng-container
+                    [ngTemplateOutlet]="image" 
+                    [ngTemplateOutletContext]="
+                    { obj :
+                        {   
+                            click: openProfileImageUpload,
+                            image: (user.profileImage) ? user.profileImage : '../../../assets/image/profile-image.jpg',
+                            alt: 'profile-image'
+                        }
+                    }">
+                </ng-container>
+            </div>
+            <div class="cover-upload">
+                <input type="file" accept="image/*" (change)="onFileInput($event, 'cover')" id="coverImgUpload" style="display:none"/> 
+                <button mat-button (click)="openCoverImageUpload()"><mat-icon>photo_camera</mat-icon>Upload Cover Image</button>
+            </div>            
+        </div>
+        <div class="details-section">
+            <div class="info-section">
+                <label>Name:</label>
+                <span>{{user.name}}</span>
+            </div>
+            <div class="info-section">
+                <label>Role:</label>
+                <span>{{user.role}}</span>
+            </div>
+            <div class="info-section">  
+                <label>Email Id:</label>
+                <span>{{user.emailId}}</span>
+            </div>
+            <div class="info-section">  
+                <label>Created Date:</label>
+                <span>{{user.createdDate | date:'medium'}}</span>
+            </div>
+        </div>
+    </mat-card>
+</section>
+
+<ng-template #image let-imgObj='obj'>
+    <img [ngClass]="imgObj.class" (click)="imgObj?.click()" alt="imgObj.alt" [src]="imgObj.image"/>
+</ng-template>

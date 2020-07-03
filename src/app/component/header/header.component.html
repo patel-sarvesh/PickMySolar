@@ -1,0 +1,25 @@
+<section class="app-header">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Pick My Solar</span>
+            <span class="header-spacer"></span>
+
+            <!-- after login -->
+            <ng-container *ngIf="isLogin | async">
+                <span class="username">Welcome - {{user.name}}</span>
+                <a mat-raised-button *ngIf="user.role === 'Admin'" routerLink="/user-list" href="#">Home</a>
+                <mat-icon class="header-icon" aria-hidden="false" [matMenuTriggerFor]="menu" aria-label="Account Icon">account_circle</mat-icon>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item *ngIf="user.role === 'Admin'" (click)="navigateToUrl('profile')">Profile</button>
+                    <button mat-menu-item (click)="logout()">Logout</button>
+                </mat-menu>
+            </ng-container>
+
+            <!-- before login -->
+            <ng-container *ngIf="!(isLogin | async)">
+                <button mat-raised-button *ngIf="!onLoginPage" (click)="navigateToUrl('login')">Login</button>
+                <button mat-raised-button *ngIf="onLoginPage" (click)="navigateToUrl('sign-up')">SignUp</button>
+            </ng-container>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>

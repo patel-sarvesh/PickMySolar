@@ -1,0 +1,23 @@
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  
+    .header-icon {
+      padding: 0 14px;
+      }
+      
+    .header-spacer {
+      flex: 1 1 auto;
+    }
+  
+    a {
+      display: table-cell;
+      margin-right: 8px;
+    }
+
+    .username {
+      margin-right: 10px;
+    }
+  }
+  
